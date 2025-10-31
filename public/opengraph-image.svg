@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00110a" />
+      <stop offset="100%" stop-color="#042017" />
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#g)" />
+
+  <!-- Glowing green orb on right -->
+  <g transform="translate(860,315)">
+    <circle cx="0" cy="0" r="170" fill="#00A859" filter="url(#blur)" opacity="0.92" />
+    <circle cx="0" cy="0" r="120" fill="#00C36A" opacity="0.9" />
+    <g opacity="0.9" transform="translate(-40,-20)">
+      <circle cx="20" cy="-10" r="6" fill="#e6fff4" opacity="0.85" />
+      <circle cx="-40" cy="20" r="4" fill="#d9ffee" opacity="0.7" />
+    </g>
+  </g>
+
+  <!-- Small network lines (decorative) -->
+  <g stroke="#6ef0a0" stroke-opacity="0.08" stroke-width="2" fill="none">
+    <path d="M820 180 C 880 200, 940 220, 980 260" />
+    <path d="M780 260 C 820 270, 860 290, 920 300" />
+    <path d="M900 350 C 940 330, 980 320, 1030 310" />
+  </g>
+
+  <!-- Left content block -->
+  <g transform="translate(80,140)">
+    <rect x="0" y="0" width="680" height="350" rx="18" fill="rgba(255,255,255,0.03)" />
+
+    <text x="36" y="72" font-family="Inter, Arial, sans-serif" font-size="42" fill="#e9fff3" font-weight="700">Eshwar Vemula</text>
+    <text x="36" y="118" font-family="Inter, Arial, sans-serif" font-size="20" fill="#bfeed0">AI Automation Specialist</text>
+
+    <text x="36" y="170" font-family="Inter, Arial, sans-serif" font-size="16" fill="#9fd8b1" opacity="0.95" style="max-width:560px">
+      Data Management and AI Automation Specialist. Building intelligent automation, reducing processing time and delivering reliable ML-driven systems.
+    </text>
+
+    <rect x="36" y="220" width="180" height="42" rx="10" fill="#00A859" />
+    <text x="66" y="250" font-family="Inter, Arial, sans-serif" font-size="16" fill="#00110a">View Portfolio</text>
+  </g>
+
+  <!-- subtle brand area bottom-left -->
+  <text x="40" y="584" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6fd9a1" opacity="0.9">
+    vemula-eshwar-portfolio
+  </text>
+</svg>
