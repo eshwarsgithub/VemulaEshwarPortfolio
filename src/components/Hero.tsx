@@ -23,8 +23,8 @@ export const Hero = () => {
       radius: number;
     }> = [];
 
-    // Create particles
-    for (let i = 0; i < 50; i++) {
+    // Create particles (slightly denser for a richer network)
+    for (let i = 0; i < 70; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -49,7 +49,8 @@ export const Hero = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(239, 68, 68, 0.5)";
+  // Deloitte-like green for particles
+  ctx.fillStyle = "rgba(0, 168, 89, 0.55)";
         ctx.fill();
 
         // Draw connections
@@ -58,11 +59,11 @@ export const Hero = () => {
           const dy = particle.y - particle2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+            if (distance < 100) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particle2.x, particle2.y);
-            ctx.strokeStyle = `rgba(239, 68, 68, ${0.2 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(0, 168, 89, ${0.22 * (1 - distance / 100)})`;
             ctx.stroke();
           }
         });
@@ -88,10 +89,15 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Decorative green orb on the right (glowing) */}
+      <div className="absolute right-0 top-0 h-full w-1/2 pointer-events-none -z-10 flex items-center justify-end">
+        <div className="orb w-64 h-64 md:w-[420px] md:h-[420px]" />
+      </div>
+
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ opacity: 0.4 }}
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{ opacity: 0.45 }}
       />
 
       <div className="container mx-auto px-6 relative z-10">
